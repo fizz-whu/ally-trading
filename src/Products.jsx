@@ -5,7 +5,7 @@ function Products() {
   return (
     <div className="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style={{fontFamily: '"Work Sans", "Noto Sans", sans-serif'}}>
       <div className="layout-container flex h-full grow flex-col">
-        <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f4] px-10 py-3">
+        <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f4] px-4 md:px-10 py-3">
           <div className="flex items-center gap-4 text-[#111418]">
             <div className="size-4">
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -17,9 +17,9 @@ function Products() {
                 />
               </svg>
             </div>
-            <h2 className="text-[#111418] text-lg font-bold leading-tight tracking-[-0.015em]">Global Commodities Trading Co.</h2>
+            <h2 className="text-[#111418] text-sm md:text-lg font-bold leading-tight tracking-[-0.015em]">Global Commodities Trading Co.</h2>
           </div>
-          <div className="flex flex-1 justify-end gap-8">
+          <div className="flex flex-1 justify-end gap-2 md:gap-8">
             <div className="flex items-center gap-9">
               <a className="text-[#111418] text-sm font-medium leading-normal" href="#">About Us</a>
               <Link to="/products" className="text-[#111418] text-sm font-medium leading-normal">Products</Link>
@@ -37,7 +37,7 @@ function Products() {
           </div>
         </header>
 
-        <div className="px-40 flex flex-1 justify-center py-5">
+        <div className="px-4 md:px-40 flex flex-1 justify-center py-5">
           <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
             <div className="flex flex-wrap gap-2 p-4">
               <Link to="/" className="text-[#617489] text-base font-medium leading-normal">Home</Link>
@@ -49,7 +49,7 @@ function Products() {
 
             <div className="flex flex-wrap justify-between gap-3 p-4">
               <div className="flex min-w-72 flex-col gap-3">
-                <p className="text-[#111418] tracking-light text-[32px] font-bold leading-tight">Sugar</p>
+                <p className="text-[#111418] tracking-light text-2xl md:text-[32px] font-bold leading-tight">Sugar</p>
                 <p className="text-[#617489] text-sm font-normal leading-normal">High-quality sugar sourced from leading producers worldwide.</p>
               </div>
             </div>
@@ -78,24 +78,24 @@ function Products() {
             </div>
 
             <h2 className="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Product Specifications</h2>
-            <div className="p-4 grid grid-cols-[20%_1fr] gap-x-6">
-              <div className="col-span-2 grid grid-cols-subgrid border-t border-t-[#dbe0e6] py-5">
+            <div className="p-4 grid grid-cols-1 md:grid-cols-[20%_1fr] gap-x-6 gap-y-4">
+              <div className="col-span-1 md:col-span-2 grid grid-cols-1 md:grid-cols-subgrid border-t border-t-[#dbe0e6] py-5">
                 <p className="text-[#617489] text-sm font-normal leading-normal">Type</p>
                 <p className="text-[#111418] text-sm font-normal leading-normal">Refined, Unrefined</p>
               </div>
-              <div className="col-span-2 grid grid-cols-subgrid border-t border-t-[#dbe0e6] py-5">
+              <div className="col-span-1 md:col-span-2 grid grid-cols-1 md:grid-cols-subgrid border-t border-t-[#dbe0e6] py-5">
                 <p className="text-[#617489] text-sm font-normal leading-normal">Origin</p>
                 <p className="text-[#111418] text-sm font-normal leading-normal">Brazil, Thailand, India</p>
               </div>
-              <div className="col-span-2 grid grid-cols-subgrid border-t border-t-[#dbe0e6] py-5">
+              <div className="col-span-1 md:col-span-2 grid grid-cols-1 md:grid-cols-subgrid border-t border-t-[#dbe0e6] py-5">
                 <p className="text-[#617489] text-sm font-normal leading-normal">ICUMSA</p>
                 <p className="text-[#111418] text-sm font-normal leading-normal">45 ICUMSA</p>
               </div>
-              <div className="col-span-2 grid grid-cols-subgrid border-t border-t-[#dbe0e6] py-5">
+              <div className="col-span-1 md:col-span-2 grid grid-cols-1 md:grid-cols-subgrid border-t border-t-[#dbe0e6] py-5">
                 <p className="text-[#617489] text-sm font-normal leading-normal">Packaging</p>
                 <p className="text-[#111418] text-sm font-normal leading-normal">25kg, 50kg bags, bulk</p>
               </div>
-              <div className="col-span-2 grid grid-cols-subgrid border-t border-t-[#dbe0e6] py-5">
+              <div className="col-span-1 md:col-span-2 grid grid-cols-1 md:grid-cols-subgrid border-t border-t-[#dbe0e6] py-5">
                 <p className="text-[#617489] text-sm font-normal leading-normal">Potential Uses</p>
                 <p className="text-[#111418] text-sm font-normal leading-normal">Food, Beverage, Industrial</p>
               </div>

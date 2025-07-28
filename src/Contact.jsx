@@ -5,7 +5,7 @@ function Contact() {
   return (
     <div className="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style={{fontFamily: '"Work Sans", "Noto Sans", sans-serif'}}>
       <div className="layout-container flex h-full grow flex-col">
-        <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f1f2f4] px-10 py-3">
+        <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f1f2f4] px-4 md:px-10 py-3">
           <div className="flex items-center gap-4 text-[#121416]">
             <div className="size-4">
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -17,10 +17,10 @@ function Contact() {
                 />
               </svg>
             </div>
-            <h2 className="text-[#121416] text-lg font-bold leading-tight tracking-[-0.015em]">Ally International Trading Inc.</h2>
+            <h2 className="text-[#121416] text-sm md:text-lg font-bold leading-tight tracking-[-0.015em]">Ally International Trading Inc.</h2>
           </div>
-          <div className="flex flex-1 justify-end gap-8">
-            <div className="flex items-center gap-9">
+          <div className="flex flex-1 justify-end gap-2 md:gap-8">
+            <div className="hidden md:flex items-center gap-9">
               <a className="text-[#121416] text-sm font-medium leading-normal" href="#">About</a>
               <a className="text-[#121416] text-sm font-medium leading-normal" href="#">Services</a>
               <Link to="/products" className="text-[#121416] text-sm font-medium leading-normal">Products</Link>
@@ -36,16 +36,16 @@ function Contact() {
           </div>
         </header>
 
-        <div className="px-40 flex flex-1 justify-center py-5">
+        <div className="px-4 md:px-40 flex flex-1 justify-center py-5">
           <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
             <div className="flex flex-wrap justify-between gap-3 p-4">
               <div className="flex min-w-72 flex-col gap-3">
-                <p className="text-[#121416] tracking-light text-[32px] font-bold leading-tight">Contact Us</p>
+                <p className="text-[#121416] tracking-light text-2xl md:text-[32px] font-bold leading-tight">Contact Us</p>
                 <p className="text-[#6a7581] text-sm font-normal leading-normal">We're here to help. Please reach out to us with any questions or inquiries.</p>
               </div>
             </div>
 
-            <div className="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+            <div className="flex max-w-full md:max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
               <label className="flex flex-col min-w-40 flex-1">
                 <p className="text-[#121416] text-base font-medium leading-normal pb-2">Name</p>
                 <input
@@ -55,7 +55,7 @@ function Contact() {
               </label>
             </div>
 
-            <div className="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+            <div className="flex max-w-full md:max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
               <label className="flex flex-col min-w-40 flex-1">
                 <p className="text-[#121416] text-base font-medium leading-normal pb-2">Email</p>
                 <input
@@ -65,7 +65,7 @@ function Contact() {
               </label>
             </div>
 
-            <div className="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+            <div className="flex max-w-full md:max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
               <label className="flex flex-col min-w-40 flex-1">
                 <p className="text-[#121416] text-base font-medium leading-normal pb-2">Subject</p>
                 <input
@@ -75,7 +75,7 @@ function Contact() {
               </label>
             </div>
 
-            <div className="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+            <div className="flex max-w-full md:max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
               <label className="flex flex-col min-w-40 flex-1">
                 <p className="text-[#121416] text-base font-medium leading-normal pb-2">Message</p>
                 <textarea
@@ -101,7 +101,7 @@ function Contact() {
               />
             </div>
 
-            <div className="p-4 grid grid-cols-[20%_1fr] gap-x-6">
+            <div className="p-4 grid grid-cols-1 md:grid-cols-[20%_1fr] gap-x-6 gap-y-4">
               <div className="col-span-2 grid grid-cols-subgrid border-t border-t-[#dde0e3] py-5">
                 <p className="text-[#6a7581] text-sm font-normal leading-normal">Address</p>
                 <p className="text-[#121416] text-sm font-normal leading-normal">Global Trade Center, 123 Commerce Ave, Tradeville, Global</p>
