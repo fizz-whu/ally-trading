@@ -7,8 +7,8 @@ function Header({ companyName = "Ally International Trading Inc." }) {
   return (
     <>
       <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f4] px-4 md:px-10 py-3">
-        <div className="flex items-center gap-4 text-[#111418]">
-          <div className="size-4">
+        <Link to="/" className="flex items-center gap-4 text-[#111418] hover:opacity-80 transition-opacity">
+          <div className="size-8 md:size-10">
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 fillRule="evenodd"
@@ -18,15 +18,11 @@ function Header({ companyName = "Ally International Trading Inc." }) {
               />
             </svg>
           </div>
-          <Link to="/">
-            <h2 className="text-[#111418] text-sm md:text-lg font-bold leading-tight tracking-[-0.015em]">{companyName}</h2>
-          </Link>
-        </div>
+          <h2 className="text-[#111418] text-sm md:text-lg font-bold leading-tight tracking-[-0.015em]">Global Commodities Trading Co.</h2>
+        </Link>
         <div className="flex flex-1 justify-end gap-2 md:gap-8">
           <div className="hidden md:flex items-center gap-9">
-            <a className="text-[#111418] text-sm font-medium leading-normal" href="#">About</a>
             <Link to="/products" className="text-[#111418] text-sm font-medium leading-normal">Products</Link>
-            <a className="text-[#111418] text-sm font-medium leading-normal" href="#">Services</a>
             <Link to="/contact" className="text-[#111418] text-sm font-medium leading-normal">Contact</Link>
           </div>
           <Link to="/contact" className="hidden md:flex">
@@ -49,9 +45,7 @@ function Header({ companyName = "Ally International Trading Inc." }) {
       {mobileMenuOpen && (
         <div className="md:hidden bg-white border-b border-[#f0f2f4] px-4 py-3">
           <div className="flex flex-col gap-3">
-            <a className="text-[#111418] text-sm font-medium leading-normal py-2" href="#">About</a>
             <Link to="/products" className="text-[#111418] text-sm font-medium leading-normal py-2" onClick={() => setMobileMenuOpen(false)}>Products</Link>
-            <a className="text-[#111418] text-sm font-medium leading-normal py-2" href="#">Services</a>
             <Link to="/contact" className="text-[#111418] text-sm font-medium leading-normal py-2" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
             <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
               <button className="flex w-full justify-center items-center rounded-lg h-10 px-4 bg-[#f0f2f4] text-[#111418] text-sm font-bold leading-normal tracking-[0.015em] mt-2">

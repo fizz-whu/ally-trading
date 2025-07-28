@@ -6,8 +6,8 @@ function Contact() {
     <div className="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style={{fontFamily: '"Work Sans", "Noto Sans", sans-serif'}}>
       <div className="layout-container flex h-full grow flex-col">
         <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f1f2f4] px-4 md:px-10 py-3">
-          <div className="flex items-center gap-4 text-[#121416]">
-            <div className="size-4">
+          <Link to="/" className="flex items-center gap-4 text-[#121416] hover:opacity-80 transition-opacity">
+            <div className="size-8 md:size-10">
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   fillRule="evenodd"
@@ -17,16 +17,11 @@ function Contact() {
                 />
               </svg>
             </div>
-            <h2 className="text-[#121416] text-sm md:text-lg font-bold leading-tight tracking-[-0.015em]">Ally International Trading Inc.</h2>
-          </div>
+            <h2 className="text-[#121416] text-sm md:text-lg font-bold leading-tight tracking-[-0.015em]">Global Commodities Trading Co.</h2>
+          </Link>
           <div className="flex flex-1 justify-end gap-2 md:gap-8">
             <div className="hidden md:flex items-center gap-9">
-              <a className="text-[#121416] text-sm font-medium leading-normal" href="#">About</a>
-              <a className="text-[#121416] text-sm font-medium leading-normal" href="#">Services</a>
               <Link to="/products" className="text-[#121416] text-sm font-medium leading-normal">Products</Link>
-              <a className="text-[#121416] text-sm font-medium leading-normal" href="#">Sustainability</a>
-              <a className="text-[#121416] text-sm font-medium leading-normal" href="#">News</a>
-              <a className="text-[#121416] text-sm font-medium leading-normal" href="#">Careers</a>
             </div>
             <Link to="/contact">
               <button className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#f1f2f4] text-[#121416] text-sm font-bold leading-normal tracking-[0.015em]">
