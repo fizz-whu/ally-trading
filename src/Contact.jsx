@@ -1,50 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import Header from './components/Header';
 
 function Contact() {
+  const { t } = useTranslation();
+  
   return (
     <div className="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style={{fontFamily: '"Work Sans", "Noto Sans", sans-serif'}}>
       <div className="layout-container flex h-full grow flex-col">
-        <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f1f2f4] px-4 md:px-10 py-3">
-          <Link to="/" className="flex items-center gap-4 text-[#121416] hover:opacity-80 transition-opacity">
-            <div className="size-8 md:size-10">
-              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z"
-                  fill="currentColor"
-                />
-              </svg>
-            </div>
-            <h2 className="text-[#121416] text-sm md:text-lg font-bold leading-tight tracking-[-0.015em]">Global Commodities Trading Co.</h2>
-          </Link>
-          <div className="flex flex-1 justify-end gap-2 md:gap-8">
-            <div className="hidden md:flex items-center gap-9">
-              <Link to="/products" className="text-[#121416] text-sm font-medium leading-normal">Products</Link>
-            </div>
-            <Link to="/contact">
-              <button className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#f1f2f4] text-[#121416] text-sm font-bold leading-normal tracking-[0.015em]">
-                <span className="truncate">Contact Us</span>
-              </button>
-            </Link>
-          </div>
-        </header>
+        <Header />
 
         <div className="px-4 md:px-40 flex flex-1 justify-center py-5">
           <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
             <div className="flex flex-wrap justify-between gap-3 p-4">
               <div className="flex min-w-72 flex-col gap-3">
-                <p className="text-[#121416] tracking-light text-2xl md:text-[32px] font-bold leading-tight">Contact Us</p>
-                <p className="text-[#6a7581] text-sm font-normal leading-normal">We're here to help. Please reach out to us with any questions or inquiries.</p>
+                <p className="text-[#121416] tracking-light text-2xl md:text-[32px] font-bold leading-tight">{t('contact.title')}</p>
+                <p className="text-[#6a7581] text-sm font-normal leading-normal">{t('contact.subtitle')}</p>
               </div>
             </div>
 
             <div className="flex max-w-full md:max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
               <label className="flex flex-col min-w-40 flex-1">
-                <p className="text-[#121416] text-base font-medium leading-normal pb-2">Name</p>
+                <p className="text-[#121416] text-base font-medium leading-normal pb-2">{t('contact.form.name')}</p>
                 <input
-                  placeholder="Your Name"
+                  placeholder={t('contact.form.namePlaceholder')}
                   className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#121416] focus:outline-0 focus:ring-0 border border-[#dde0e3] bg-white focus:border-[#dde0e3] h-14 placeholder:text-[#6a7581] p-[15px] text-base font-normal leading-normal"
                 />
               </label>
@@ -52,9 +32,9 @@ function Contact() {
 
             <div className="flex max-w-full md:max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
               <label className="flex flex-col min-w-40 flex-1">
-                <p className="text-[#121416] text-base font-medium leading-normal pb-2">Email</p>
+                <p className="text-[#121416] text-base font-medium leading-normal pb-2">{t('contact.form.email')}</p>
                 <input
-                  placeholder="Your Email"
+                  placeholder={t('contact.form.emailPlaceholder')}
                   className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#121416] focus:outline-0 focus:ring-0 border border-[#dde0e3] bg-white focus:border-[#dde0e3] h-14 placeholder:text-[#6a7581] p-[15px] text-base font-normal leading-normal"
                 />
               </label>
@@ -62,9 +42,9 @@ function Contact() {
 
             <div className="flex max-w-full md:max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
               <label className="flex flex-col min-w-40 flex-1">
-                <p className="text-[#121416] text-base font-medium leading-normal pb-2">Subject</p>
+                <p className="text-[#121416] text-base font-medium leading-normal pb-2">{t('contact.form.subject')}</p>
                 <input
-                  placeholder="Subject"
+                  placeholder={t('contact.form.subjectPlaceholder')}
                   className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#121416] focus:outline-0 focus:ring-0 border border-[#dde0e3] bg-white focus:border-[#dde0e3] h-14 placeholder:text-[#6a7581] p-[15px] text-base font-normal leading-normal"
                 />
               </label>
@@ -72,9 +52,9 @@ function Contact() {
 
             <div className="flex max-w-full md:max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
               <label className="flex flex-col min-w-40 flex-1">
-                <p className="text-[#121416] text-base font-medium leading-normal pb-2">Message</p>
+                <p className="text-[#121416] text-base font-medium leading-normal pb-2">{t('contact.form.message')}</p>
                 <textarea
-                  placeholder="Your Message"
+                  placeholder={t('contact.form.messagePlaceholder')}
                   className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#121416] focus:outline-0 focus:ring-0 border border-[#dde0e3] bg-white focus:border-[#dde0e3] min-h-36 placeholder:text-[#6a7581] p-[15px] text-base font-normal leading-normal"
                 />
               </label>
@@ -82,11 +62,11 @@ function Contact() {
 
             <div className="flex px-4 py-3 justify-start">
               <button className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#c5d7eb] text-[#121416] text-sm font-bold leading-normal tracking-[0.015em]">
-                <span className="truncate">Submit</span>
+                <span className="truncate">{t('contact.form.submit')}</span>
               </button>
             </div>
 
-            <h2 className="text-[#121416] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Our Locations</h2>
+            <h2 className="text-[#121416] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">{t('contact.locations')}</h2>
             <div className="flex px-4 py-3">
               <div
                 className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl object-cover"
@@ -98,16 +78,16 @@ function Contact() {
 
             <div className="p-4 grid grid-cols-1 md:grid-cols-[20%_1fr] gap-x-6 gap-y-4">
               <div className="col-span-2 grid grid-cols-subgrid border-t border-t-[#dde0e3] py-5">
-                <p className="text-[#6a7581] text-sm font-normal leading-normal">Address</p>
-                <p className="text-[#121416] text-sm font-normal leading-normal">Global Trade Center, 123 Commerce Ave, Tradeville, Global</p>
+                <p className="text-[#6a7581] text-sm font-normal leading-normal">{t('contact.address')}</p>
+                <p className="text-[#121416] text-sm font-normal leading-normal">{t('contact.addressValue')}</p>
               </div>
               <div className="col-span-2 grid grid-cols-subgrid border-t border-t-[#dde0e3] py-5">
-                <p className="text-[#6a7581] text-sm font-normal leading-normal">Phone</p>
-                <p className="text-[#121416] text-sm font-normal leading-normal">+1 (555) 123-4567</p>
+                <p className="text-[#6a7581] text-sm font-normal leading-normal">{t('contact.phone')}</p>
+                <p className="text-[#121416] text-sm font-normal leading-normal">{t('contact.phoneValue')}</p>
               </div>
               <div className="col-span-2 grid grid-cols-subgrid border-t border-t-[#dde0e3] py-5">
-                <p className="text-[#6a7581] text-sm font-normal leading-normal">Email</p>
-                <p className="text-[#121416] text-sm font-normal leading-normal">info@allytrading.com</p>
+                <p className="text-[#6a7581] text-sm font-normal leading-normal">{t('contact.form.email')}</p>
+                <p className="text-[#121416] text-sm font-normal leading-normal">{t('contact.emailValue')}</p>
               </div>
             </div>
           </div>
@@ -117,10 +97,10 @@ function Contact() {
           <div className="flex max-w-[960px] flex-1 flex-col">
             <footer className="flex flex-col gap-6 px-5 py-10 text-center @container">
               <div className="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
-                <a className="text-[#6a7581] text-base font-normal leading-normal min-w-40" href="#">Privacy Policy</a>
-                <a className="text-[#6a7581] text-base font-normal leading-normal min-w-40" href="#">Terms of Service</a>
+                <a className="text-[#6a7581] text-base font-normal leading-normal min-w-40" href="#">{t('home.footer.privacyPolicy')}</a>
+                <a className="text-[#6a7581] text-base font-normal leading-normal min-w-40" href="#">{t('home.footer.termsOfService')}</a>
               </div>
-              <p className="text-[#6a7581] text-base font-normal leading-normal">© 2023 Ally International Trading Inc. All rights reserved.</p>
+              <p className="text-[#6a7581] text-base font-normal leading-normal">{t('home.footer.copyright')}</p>
             </footer>
           </div>
         </footer>

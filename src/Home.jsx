@@ -1,57 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import Header from './components/Header';
 
 function Home() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useTranslation();
 
   return (
     <div className="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style={{fontFamily: '"Work Sans", "Noto Sans", sans-serif'}}>
       <div className="layout-container flex h-full grow flex-col">
-        <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f4] px-4 md:px-10 py-3">
-          <Link to="/" className="flex items-center gap-4 text-[#111418] hover:opacity-80 transition-opacity">
-            <div className="size-8 md:size-10">
-              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z"
-                  fill="currentColor"
-                />
-              </svg>
-            </div>
-            <h2 className="text-[#111418] text-sm md:text-lg font-bold leading-tight tracking-[-0.015em]">Global Commodities Trading Co.</h2>
-          </Link>
-          <div className="flex flex-1 justify-end gap-2 md:gap-8">
-            <div className="hidden md:flex items-center gap-9">
-              <Link to="/products" className="text-[#111418] text-sm font-medium leading-normal">Products</Link>
-              <Link to="/contact" className="text-[#111418] text-sm font-medium leading-normal">Contact</Link>
-            </div>
-            <button className="hidden md:flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#f0f2f4] text-[#111418] text-sm font-bold leading-normal tracking-[0.015em]">
-              <span className="truncate">Login</span>
-            </button>
-            <button 
-              className="md:hidden p-2" 
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
-          </div>
-        </header>
-
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden bg-white border-b border-[#f0f2f4] px-4 py-3">
-            <div className="flex flex-col gap-3">
-              <Link to="/products" className="text-[#111418] text-sm font-medium leading-normal py-2" onClick={() => setMobileMenuOpen(false)}>Products</Link>
-              <Link to="/contact" className="text-[#111418] text-sm font-medium leading-normal py-2" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
-              <button className="flex w-full justify-center items-center rounded-full h-10 px-4 bg-[#f0f2f4] text-[#111418] text-sm font-bold leading-normal tracking-[0.015em] mt-2">
-                <span className="truncate">Login</span>
-              </button>
-            </div>
-          </div>
-        )}
+        <Header />
 
         <div className="px-4 md:px-40 flex flex-1 justify-center py-5">
           <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
@@ -65,23 +23,22 @@ function Home() {
                 >
                   <div className="flex flex-col gap-2 text-left max-w-full">
                     <h1 className="text-white text-2xl md:text-4xl lg:text-5xl font-black leading-tight tracking-[-0.033em]">
-                      Your Global Partner in Commodity Trading
+                      {t('home.heroTitle')}
                     </h1>
                     <h2 className="text-white text-xs md:text-sm lg:text-base font-normal leading-normal">
-                      Ally International Trading Inc. is a leading international trading company specializing in a wide range of commodities. With a global network and deep market
-                      insights, we connect buyers and sellers across the world, ensuring efficient and reliable trade solutions.
+                      {t('home.heroDescription')}
                     </h2>
                   </div>
                   <Link to="/products">
                     <button className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#1070de] text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]">
-                      <span className="truncate">Explore Our Products</span>
+                      <span className="truncate">{t('home.exploreProducts')}</span>
                     </button>
                   </Link>
                 </div>
               </div>
             </div>
 
-            <h2 className="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Our Products</h2>
+            <h2 className="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">{t('home.ourProducts')}</h2>
             <div className="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
               <div className="flex flex-col gap-3 pb-3">
                 <div
@@ -91,8 +48,8 @@ function Home() {
                   }}
                 />
                 <div>
-                  <p className="text-[#111418] text-base font-medium leading-normal">Sugar</p>
-                  <p className="text-[#617489] text-sm font-normal leading-normal">High-quality sugar for various industrial and consumer applications.</p>
+                  <p className="text-[#111418] text-base font-medium leading-normal">{t('products.sugar.name')}</p>
+                  <p className="text-[#617489] text-sm font-normal leading-normal">{t('products.sugar.description')}</p>
                 </div>
               </div>
               <div className="flex flex-col gap-3 pb-3">
@@ -103,8 +60,8 @@ function Home() {
                   }}
                 />
                 <div>
-                  <p className="text-[#111418] text-base font-medium leading-normal">Chicken Feet</p>
-                  <p className="text-[#617489] text-sm font-normal leading-normal">Processed chicken feet, a popular ingredient in Asian cuisine.</p>
+                  <p className="text-[#111418] text-base font-medium leading-normal">{t('products.chickenFeet.name')}</p>
+                  <p className="text-[#617489] text-sm font-normal leading-normal">{t('products.chickenFeet.description')}</p>
                 </div>
               </div>
               <div className="flex flex-col gap-3 pb-3">
@@ -115,8 +72,8 @@ function Home() {
                   }}
                 />
                 <div>
-                  <p className="text-[#111418] text-base font-medium leading-normal">Petroleum Coke</p>
-                  <p className="text-[#617489] text-sm font-normal leading-normal">Petroleum coke, a carbon-rich solid material used in various industries.</p>
+                  <p className="text-[#111418] text-base font-medium leading-normal">{t('products.petroleumCoke.name')}</p>
+                  <p className="text-[#617489] text-sm font-normal leading-normal">{t('products.petroleumCoke.description')}</p>
                 </div>
               </div>
               <div className="flex flex-col gap-3 pb-3">
@@ -127,21 +84,20 @@ function Home() {
                   }}
                 />
                 <div>
-                  <p className="text-[#111418] text-base font-medium leading-normal">Aluminum Ingot</p>
-                  <p className="text-[#617489] text-sm font-normal leading-normal">Aluminum ingots, essential for manufacturing and construction.</p>
+                  <p className="text-[#111418] text-base font-medium leading-normal">{t('products.aluminumIngot.name')}</p>
+                  <p className="text-[#617489] text-sm font-normal leading-normal">{t('products.aluminumIngot.description')}</p>
                 </div>
               </div>
             </div>
 
-            <h2 className="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Why Choose Us?</h2>
+            <h2 className="text-[#111418] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">{t('home.whyChooseUs')}</h2>
             <div className="flex flex-col gap-10 px-4 py-10 @container">
               <div className="flex flex-col gap-4">
                 <h1 className="text-[#111418] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]">
-                  Our Commitment
+                  {t('home.ourCommitment')}
                 </h1>
                 <p className="text-[#111418] text-base font-normal leading-normal max-w-[720px]">
-                  At Ally International Trading Inc., we are dedicated to providing our clients with the highest level of service and expertise. Our team of experienced
-                  professionals works tirelessly to ensure that every transaction is executed smoothly and efficiently, delivering value and building long-term partnerships.
+                  {t('home.commitmentDescription')}
                 </p>
               </div>
               <div className="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-0">
@@ -152,8 +108,8 @@ function Home() {
                     </svg>
                   </div>
                   <div className="flex flex-col gap-1">
-                    <h2 className="text-[#111418] text-base font-bold leading-tight">Global Reach</h2>
-                    <p className="text-[#617489] text-sm font-normal leading-normal">Extensive network of partners and suppliers across the globe</p>
+                    <h2 className="text-[#111418] text-base font-bold leading-tight">{t('home.globalReach')}</h2>
+                    <p className="text-[#617489] text-sm font-normal leading-normal">{t('home.globalReachDesc')}</p>
                   </div>
                 </div>
                 <div className="flex flex-1 gap-3 rounded-lg border border-[#dbe0e6] bg-white p-4 flex-col">
@@ -163,8 +119,8 @@ function Home() {
                     </svg>
                   </div>
                   <div className="flex flex-col gap-1">
-                    <h2 className="text-[#111418] text-base font-bold leading-tight">Market Expertise</h2>
-                    <p className="text-[#617489] text-sm font-normal leading-normal">Deep understanding of commodity markets and trends</p>
+                    <h2 className="text-[#111418] text-base font-bold leading-tight">{t('home.marketExpertise')}</h2>
+                    <p className="text-[#617489] text-sm font-normal leading-normal">{t('home.marketExpertiseDesc')}</p>
                   </div>
                 </div>
                 <div className="flex flex-1 gap-3 rounded-lg border border-[#dbe0e6] bg-white p-4 flex-col">
@@ -174,8 +130,8 @@ function Home() {
                     </svg>
                   </div>
                   <div className="flex flex-col gap-1">
-                    <h2 className="text-[#111418] text-base font-bold leading-tight">Reliable Solutions</h2>
-                    <p className="text-[#617489] text-sm font-normal leading-normal">Efficient and dependable trading and logistics services</p>
+                    <h2 className="text-[#111418] text-base font-bold leading-tight">{t('home.reliableSolutions')}</h2>
+                    <p className="text-[#617489] text-sm font-normal leading-normal">{t('home.reliableSolutionsDesc')}</p>
                   </div>
                 </div>
                 <div className="flex flex-1 gap-3 rounded-lg border border-[#dbe0e6] bg-white p-4 flex-col">
@@ -185,8 +141,8 @@ function Home() {
                     </svg>
                   </div>
                   <div className="flex flex-col gap-1">
-                    <h2 className="text-[#111418] text-base font-bold leading-tight">Sustainable Practices</h2>
-                    <p className="text-[#617489] text-sm font-normal leading-normal">Commitment to ethical and environmentally responsible trading</p>
+                    <h2 className="text-[#111418] text-base font-bold leading-tight">{t('home.sustainablePractices')}</h2>
+                    <p className="text-[#617489] text-sm font-normal leading-normal">{t('home.sustainablePracticesDesc')}</p>
                   </div>
                 </div>
               </div>
@@ -196,17 +152,17 @@ function Home() {
               <div className="flex flex-col justify-end gap-6 px-4 py-10 @[480px]:gap-8 @[480px]:px-10 @[480px]:py-20">
                 <div className="flex flex-col gap-2 text-center">
                   <h1 className="text-[#111418] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]">
-                    Ready to Trade?
+                    {t('home.readyToTrade')}
                   </h1>
                   <p className="text-[#111418] text-base font-normal leading-normal max-w-[720px]">
-                    Get in touch with our team to discuss your commodity trading needs and how we can help you achieve your goals.
+                    {t('home.readyToTradeDesc')}
                   </p>
                 </div>
                 <div className="flex flex-1 justify-center">
                   <div className="flex justify-center">
                     <Link to="/contact">
                       <button className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#1070de] text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] grow">
-                        <span className="truncate">Contact Us</span>
+                        <span className="truncate">{t('header.contact')}</span>
                       </button>
                     </Link>
                   </div>
@@ -220,8 +176,8 @@ function Home() {
           <div className="flex max-w-[960px] flex-1 flex-col">
             <footer className="flex flex-col gap-6 px-5 py-10 text-center @container">
               <div className="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
-                <a className="text-[#617489] text-base font-normal leading-normal min-w-40" href="#">Privacy Policy</a>
-                <a className="text-[#617489] text-base font-normal leading-normal min-w-40" href="#">Terms of Service</a>
+                <a className="text-[#617489] text-base font-normal leading-normal min-w-40" href="#">{t('home.footer.privacyPolicy')}</a>
+                <a className="text-[#617489] text-base font-normal leading-normal min-w-40" href="#">{t('home.footer.termsOfService')}</a>
               </div>
               <div className="flex flex-wrap justify-center gap-4">
                 <a href="#">
@@ -239,7 +195,7 @@ function Home() {
                   </div>
                 </a>
               </div>
-              <p className="text-[#617489] text-base font-normal leading-normal">© 2024 Ally International Trading Inc. All rights reserved.</p>
+              <p className="text-[#617489] text-base font-normal leading-normal">{t('home.footer.copyright')}</p>
             </footer>
           </div>
         </footer>

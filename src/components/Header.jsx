@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from './LanguageSwitcher';
 
 function Header({ companyName = "Ally International Trading Inc." }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useTranslation();
 
   return (
     <>
@@ -18,18 +21,14 @@ function Header({ companyName = "Ally International Trading Inc." }) {
               />
             </svg>
           </div>
-          <h2 className="text-[#111418] text-sm md:text-lg font-bold leading-tight tracking-[-0.015em]">Global Commodities Trading Co.</h2>
+          <h2 className="text-[#111418] text-sm md:text-lg font-bold leading-tight tracking-[-0.015em]">{t('header.companyName')}</h2>
         </Link>
         <div className="flex flex-1 justify-end gap-2 md:gap-8">
           <div className="hidden md:flex items-center gap-9">
-            <Link to="/products" className="text-[#111418] text-sm font-medium leading-normal">Products</Link>
-            <Link to="/contact" className="text-[#111418] text-sm font-medium leading-normal">Contact</Link>
+            <Link to="/products" className="text-[#111418] text-sm font-medium leading-normal">{t('header.products')}</Link>
+            <Link to="/contact" className="text-[#111418] text-sm font-medium leading-normal">{t('header.contact')}</Link>
+            <LanguageSwitcher />
           </div>
-          <Link to="/contact" className="hidden md:flex">
-            <button className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#f0f2f4] text-[#111418] text-sm font-bold leading-normal tracking-[0.015em]">
-              <span className="truncate">Contact Us</span>
-            </button>
-          </Link>
           <button 
             className="md:hidden p-2" 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -45,13 +44,11 @@ function Header({ companyName = "Ally International Trading Inc." }) {
       {mobileMenuOpen && (
         <div className="md:hidden bg-white border-b border-[#f0f2f4] px-4 py-3">
           <div className="flex flex-col gap-3">
-            <Link to="/products" className="text-[#111418] text-sm font-medium leading-normal py-2" onClick={() => setMobileMenuOpen(false)}>Products</Link>
-            <Link to="/contact" className="text-[#111418] text-sm font-medium leading-normal py-2" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
-            <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
-              <button className="flex w-full justify-center items-center rounded-lg h-10 px-4 bg-[#f0f2f4] text-[#111418] text-sm font-bold leading-normal tracking-[0.015em] mt-2">
-                <span className="truncate">Contact Us</span>
-              </button>
-            </Link>
+            <Link to="/products" className="text-[#111418] text-sm font-medium leading-normal py-2" onClick={() => setMobileMenuOpen(false)}>{t('header.products')}</Link>
+            <Link to="/contact" className="text-[#111418] text-sm font-medium leading-normal py-2" onClick={() => setMobileMenuOpen(false)}>{t('header.contact')}</Link>
+            <div className="flex justify-center py-2">
+              <LanguageSwitcher />
+            </div>
           </div>
         </div>
       )}
