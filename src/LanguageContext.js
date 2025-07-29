@@ -105,10 +105,10 @@ const translations = {
       },
       locations: "Our Locations",
       address: "Address",
-      addressValue: "Global Trade Center, 123 Commerce Ave, Tradeville, Global",
+      addressValue: "1390 Market Street, San Francisco, CA 94102",
       phone: "Phone",
-      phoneValue: "+1 (555) 123-4567",
-      emailValue: "info@allytrading.com"
+      phoneValue: "626-998-6149",
+      emailValue: "meijun.li@allyintltrading.com"
     }
   },
   zh: {
@@ -213,10 +213,10 @@ const translations = {
       },
       locations: "我们的位置",
       address: "地址",
-      addressValue: "全球贸易中心，商业大道123号，贸易城，全球",
+      addressValue: "1390 Market Street, San Francisco, CA 94102",
       phone: "电话",
-      phoneValue: "+1 (555) 123-4567",
-      emailValue: "info@allytrading.com"
+      phoneValue: "626-998-6149",
+      emailValue: "meijun.li@allyintltrading.com"
     }
   }
 };
